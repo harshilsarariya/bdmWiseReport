@@ -2,15 +2,14 @@ import streamlit as st
 import mysql.connector
 import pandas as pd
 import datetime
-import os
 
+st.set_page_config(page_title="📞 Agent Disposition Viewer", layout="wide")
 
-# --------------------- CONFIG ---------------------
 db_config = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "user": os.getenv("DB_USER", "your_user"),
-    "password": os.getenv("DB_PASSWORD", "your_password"),
-    "database": os.getenv("DB_NAME", "your_database"),
+    "host": st.secrets["DB_HOST"],
+    "user": st.secrets["DB_USER"],
+    "password": st.secrets["DB_PASSWORD"],
+    "database": st.secrets["DB_NAME"],
 }
 
 
